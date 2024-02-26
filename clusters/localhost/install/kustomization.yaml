@@ -10,3 +10,6 @@ commonLabels:
 
 resources:
 - ../../../apps/melisekm-ambulance-ufe
+
+components:
+ - ../../../components/version-developers
