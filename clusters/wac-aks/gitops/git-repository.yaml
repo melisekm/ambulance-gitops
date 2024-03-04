@@ -1,0 +1,17 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+ name: melisekm-gitops-repo # v spoločnom klastri je nasadených viacero takýchto objektov
+ namespace: wac-hospital
+spec:
+ interval: 1m0s
+ ref:
+     branch: main
+ secretRef:
+      name: melisekm-repository-pat
+ timeout: 1m0s
+ url: https://github.com/melisekm/ambulance-gitops
+
+# ak používate privátny repozitár nezabudnite doplniť autentifikačné údaje
+# secretRef:
+#    name: melisekm-repository-pat
