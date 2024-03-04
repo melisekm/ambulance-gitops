@@ -7,8 +7,6 @@ spec:
  interval: 1m0s
  ref:
      branch: main
- secretRef:
-      name: melisekm-repository-pat
  timeout: 1m0s
  url: https://github.com/melisekm/ambulance-gitops
 
