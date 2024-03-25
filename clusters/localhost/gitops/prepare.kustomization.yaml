@@ -4,10 +4,18 @@ metadata:
   name: prepare
   namespace: wac-hospital
 spec:
-  wait: true
   interval: 42s
   path: clusters/localhost/prepare
   prune: true
   sourceRef:
     kind: GitRepository
     name: gitops-repo
+  healthChecks:
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: envoy-gateway
+      namespace: envoy-gateway-system
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: ufe-controller
+      namespace: wac-hospital
