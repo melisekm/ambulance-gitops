@@ -10,6 +10,12 @@ commonLabels:
 
 resources:
 - ../../../apps/melisekm-ambulance-ufe
+- ../../../apps/melisekm-ambulance-webapi
 
 components:
  - ../../../components/version-developers
+ - https://github.com/melisekm/ambulance-webapi//deployments/kustomize/components/mongodb
+
+patches:
+ - path: patches/ambulance-webapi.service.yaml
+ 
